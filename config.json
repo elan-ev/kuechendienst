@@ -3,6 +3,6 @@
     "RANGE_NAME": "CHANGE_ME",
     "MATRIX_ROOM": "CHANGE_ME",
     "SERVER_MATRIX_BOT": "CHANGE_ME",
-    "PATH_CREDENTIALS": "credentials.json",
-    "PATH_SECRET": "client_secret.json"
+    "PATH_CREDENTIALS": "/etc/kuechendienst/credentials.json",
+    "PATH_SECRET": "/etc/kuechendienst/client_secret.json"
 }
