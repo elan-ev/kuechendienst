@@ -1,0 +1,8 @@
+{
+    "SPREADSHEET_ID": "CHANGE_ME",
+    "RANGE_NAME": "CHANGE_ME",
+    "MATRIX_ROOM": "CHANGE_ME",
+    "SERVER_MATRIX_BOT": "CHANGE_ME",
+    "PATH_CREDENTIALS": "credentials.json",
+    "PATH_SECRET": "client_secret.json"
+}
