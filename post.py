@@ -43,13 +43,19 @@ RESULT = SERVICE.spreadsheets().values().get(
 ENTRIES = RESULT['values'][1:]
 print("Reading List. Length: " + str(len(RESULT['values']) - 1))
 
-WEEKNUMBER = datetime.date.today().isocalendar()[1]
-print("We are in week number " + str(WEEKNUMBER))
+today = datetime.date.today()
+WEEKNUMBER = today.isocalendar()[1]
+NEXTWEEKNUMBER = (today + datetime.timedelta(days=(7 - today.weekday()))).isocalendar()[1]
+print("We are in week number " + str(WEEKNUMBER) + "\n" +
+        "Next week is week number " + str(NEXTWEEKNUMBER))
 
 for entry in ENTRIES:
     if int(entry[0]) == WEEKNUMBER:
         person1 = entry[2]
         person2 = entry[3]
+    elif int(entry[0]) == NEXTWEEKNUMBER:
+        person3 = entry[2]
+        person4 = entry[3]
         break
 
 MSG = "Küchendienst in der aktuellen Kalenderwoche " + str(WEEKNUMBER) + ":"
@@ -60,6 +66,16 @@ if person1 != "":
 else:
     if person2 != "":
         MSG = MSG + " " + person2
+    else:
+        MSG = MSG + " keiner"
+MSG = MSG + "\n" + "Küchendienst in der kommenden Kalenderwoche " + str(NEXTWEEKNUMBER) + ":"
+if person3 != "":
+    MSG = MSG + " " + person3
+    if person4 != "":
+        MSG = MSG + " und " + person4
+else:
+    if person4 != "":
+        MSG = MSG + " " + person4
     else:
         MSG = MSG + " keiner"
 
