@@ -4,4 +4,4 @@ Description=Post Kuechendienst Message
 [Service]
 Type=oneshot
 ExecStartPre=/bin/docker pull elanev/kuechendienst
-ExecStart=/bin/docker run --name kuechendienst --volume /data/kuechendienst/:/etc/kuechendienst --network matrix_nw --rm elanev/kuechendienst
+ExecStart=/bin/docker run --volume /data/kuechendienst/:/etc/kuechendienst --network matrix_nw --rm elanev/kuechendienst
